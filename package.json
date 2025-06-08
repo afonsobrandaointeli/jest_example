@@ -1,0 +1,24 @@
+{
+  "name": "jest_example",
+  "version": "1.0.0",
+  "description": "**1. Project Structure**",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "node migrations/runMigrations",
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "pg": "^8.16.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.1"
+  }
+}

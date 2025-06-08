@@ -1,0 +1,2 @@
+### List all motivational phrases
+GET http://localhost:3000/phrases
