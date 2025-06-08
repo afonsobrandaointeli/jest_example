@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Feridas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-5">
+
+    <h1>Cadastro de Ferida</h1>
+
+    <form action="/cadastro" method="post">
+        <div class="mb-3">
+            <label for="paciente_nome" class="form-label">Nome do Paciente:</label>
+            <input type="text" id="paciente_nome" name="paciente_nome" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="tipo" class="form-label">Tipo:</label>
+            <select id="tipo" name="tipo" class="form-select" required>
+                <option>Queimadura</option>
+                <option>Corte</option>
+                <option>Escoriação</option>
+                <option>Úlcera</option>
+                <option>Outros</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="tempo" class="form-label">Tempo (meses):</label>
+            <select id="tempo" name="tempo" class="form-select" required>
+                <% for (let i = 1; i <= 12; i++) { %>
+                    <option value="<%= i %>"><%= i %> mês<%= i > 1 ? 'es' : '' %></option>
+                <% } %>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição:</label>
+            <textarea id="descricao" name="descricao" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <a href="/" class="btn btn-secondary">Voltar</a>
+    </form>
+
+</body>
+</html>
