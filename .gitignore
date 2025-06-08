@@ -1,0 +1,20 @@
+# Node.js
+node_modules/
+coverage/
+.env
+package-lock.json
+
+# Windows
+Thumbs.db
+Desktop.ini
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+._*
+Icon\r
+
+# Linux
+*~
+*.swp

@@ -1,26 +1,13 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-require('dotenv').config();
+require('dotenv').config(); 
+const http = require('http');
+const app  = require('./app');
 
-const homeRoutes = require('./routes/homeRoutes');
-const feridaRoutes = require('./routes/feridaRoutes');
-const relatorioRoutes = require('./routes/relatorioRoutes');
+const PORT = process.env.PORT || 3000;
 
-const app = express();
-const PORT = 3000;
+const server = http.createServer(app);
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.set('view engine', 'ejs');
-
-app.use((req, res, next) => {
-    console.log(`[Servidor] - ${req.method} ${req.url}`);
-    next();
+server.listen(PORT, () => {
+  console.log(`[Servidor] - Aplicação rodando em http://localhost:${PORT}`);
 });
 
-app.use('/', homeRoutes);
-app.use('/', feridaRoutes);
-app.use('/', relatorioRoutes);
-
-app.listen(PORT, () => {
-    console.log(`[Servidor] - Aplicação rodando em http://localhost:${PORT}`);
-});
+module.exports = server;
